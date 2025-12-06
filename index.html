@@ -1,81 +1,71 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Candidature Staff - Glast</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidature Staff — Glast</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="container">
 
-  <h1 class="title">Bienvenue sur le système de candidature de <span>Glast</span></h1>
+    <h1>Bienvenue sur le système de candidature de Glast</h1>
 
-  <!-- ÉTAPE 1 -->
-  <div id="step1" class="card">
-    <h2>Présentation IRL</h2>
+    <!-- PAGE 1 -->
+    <div class="page" id="page1">
+        <h2>Présentation IRL</h2>
 
-    <div class="inputs">
-      <label>Présentation IRL</label>
-      <textarea id="irl" placeholder="Présente-toi ici..."></textarea>
+        <label>Votre Pseudo Discord :</label>
+        <input id="pseudo">
 
-      <label>Votre Pseudo Discord</label>
-      <input id="discord" placeholder="ex: user#0000">
+        <label>Quel est votre prénom ?</label>
+        <input id="prenom">
 
-      <label>Quel est votre prénom ?</label>
-      <input id="prenom">
+        <label>Quel est votre âge ?</label>
+        <input id="age" type="number">
 
-      <label>Quel est votre âge ?</label>
-      <input id="age" type="number">
+        <label>Pouvez-vous nous dire vos disponibilités ?</label>
+        <textarea id="dispos"></textarea>
 
-      <label>Pouvez-vous nous dire vos disponibilités ?</label>
-      <textarea id="dispos"></textarea>
+        <button class="next-btn" onclick="nextPage()">Suivant ➜</button>
     </div>
 
-    <button class="btn-next" onclick="nextStep()">Suivant ➜</button>
-  </div>
+    <!-- PAGE 2 -->
+    <div class="page" id="page2" style="display:none;">
+        <h2>Administration</h2>
 
+        <label>Dans quelle catégorie souhaitez-vous aller ?</label>
+        <select id="categorie">
+            <option value="Staff">🔫 Staff (OPEN)</option>
+            <option value="Community Manager">🛡️ Community Manager (OPEN)</option>
+        </select>
 
-  <!-- ÉTAPE 2 -->
-  <div id="step2" class="card" style="display:none;">
-    <h2>Administration</h2>
+        <label>Quelles sont vos motivations ?</label>
+        <textarea id="motiv"></textarea>
 
-    <div class="inputs">
+        <label>Pourquoi vous et pas un autre ?</label>
+        <textarea id="why"></textarea>
 
-      <label>Dans quelle catégorie du staff souhaitez-vous aller ?</label>
-      <select id="categorie">
-        <option value="Staff">🔫・Staff (OPEN)</option>
-        <option value="Community Manager">🛡️・Community Manager (OPEN)</option>
-      </select>
+        <label>Qualités (minimum 3) :</label>
+        <textarea id="qualites"></textarea>
 
-      <label>Quelles sont vos motivations ?</label>
-      <textarea id="motivations"></textarea>
+        <label>Qu'est-ce qu'un Modérateur / Community Manager ?</label>
+        <textarea id="definition"></textarea>
 
-      <label>Pourquoi vous et pas un autre ?</label>
-      <textarea id="why"></textarea>
+        <label>Expérience dans le domaine choisi :</label>
+        <textarea id="xp"></textarea>
 
-      <label>Qualités (Minimum 3)</label>
-      <textarea id="qualites"></textarea>
+        <label>Voulez-vous ajouter quelque chose ?</label>
+        <textarea id="add"></textarea>
 
-      <label>Qu'est-ce qu'un Modérateur / Community Manager ?</label>
-      <textarea id="definition"></textarea>
+        <div class="btns">
+            <button class="back-btn" onclick="prevPage()">⬅ Retour</button>
+            <button class="send-btn" onclick="sendForm()">Envoyer ✔</button>
+        </div>
 
-      <label>Expérience (dans le domaine choisi)</label>
-      <textarea id="experience"></textarea>
-
-      <label>Avez-vous quelque chose à ajouter ?</label>
-      <textarea id="extra"></textarea>
+        <p id="status"></p>
     </div>
-
-    <div class="btn-row">
-      <button class="btn-back" onclick="prevStep()">⬅ Retour</button>
-      <button class="btn-send" onclick="sendForm()">Envoyer 🚀</button>
-    </div>
-
-    <p id="status" class="status"></p>
-  </div>
 
 </div>
 
