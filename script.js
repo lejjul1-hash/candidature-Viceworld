@@ -1,86 +1,78 @@
-body {
-    margin: 0;
-    background: #050506;
-    color: #f2f2f7;
-    font-family: Arial, sans-serif;
+// ==========================
+// 🔥 ANTI SPAM 24H
+// ==========================
+const lastSent = localStorage.getItem("lastSend");
+
+if (lastSent) {
+    const diff = Date.now() - Number(lastSent);
+    if (diff < 24 * 60 * 60 * 1000) {
+        alert("❗ Vous avez déjà envoyé une candidature. Vous devez attendre 24h.");
+    }
 }
 
-.container {
-    max-width: 750px;
-    margin: 40px auto;
-    padding: 20px;
-}
+// ==========================
+// PAGE 1 → PAGE 2
+// ==========================
+document.getElementById("nextBtn").addEventListener("click", () => {
 
-.title {
-    text-align: center;
-    font-size: 28px;
-    margin-bottom: 25px;
-    font-weight: 900;
-    color: #ff4040;
-    text-shadow: 0 0 15px #ff0000;
-}
+    if (
+        document.getElementById("pseudo").value.trim() === "" ||
+        document.getElementById("age").value.trim() === ""
+    ) {
+        alert("Veuillez remplir au minimum PSEUDO + ÂGE.");
+        return;
+    }
 
-.card {
-    background: #0e0e10;
-    padding: 22px;
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(255,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.03);
-}
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+});
 
-label {
-    display: block;
-    margin-top: 12px;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
+// ==========================
+// RETOUR PAGE 1
+// ==========================
+document.getElementById("backBtn").addEventListener("click", () => {
+    document.getElementById("page1").style.display = "block";
+    document.getElementById("page2").style.display = "none";
+});
 
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.08);
-    background: rgba(255,255,255,0.03);
-    color: white;
-    resize: none;
-    outline: none;
-}
+// ==========================
+// ENVOI WEBHOOK
+// ==========================
+document.getElementById("sendBtn").addEventListener("click", () => {
 
-textarea {
-    height: 85px;
-}
+    const data = {
+        pseudo: pseudo.value,
+        prenom: prenom.value,
+        age: age.value,
+        dispo: dispo.value,
+        poste: document.querySelector("input[name='poste']:checked")?.value || "Non précisé",
+        motive: motive.value,
+        pourquoi: pourquoi.value,
+        qualites: qualites.value,
+        definition: definition.value,
+        experience: experience.value,
+        autre: autre.value
+    };
 
-.btn, .btn-secondary {
-    width: 100%;
-    padding: 14px;
-    margin-top: 18px;
-    border: none;
-    border-radius: 10px;
-    font-size: 17px;
-    cursor: pointer;
-    font-weight: 700;
-}
+    const webhook = "https://discord.com/api/webhooks/1447005556635209899/tb29lQPMnF47DCR1w2BqQzXujui3qYhEVsY45GhJ9726gvlNfhTQ5cWSuwMXNZGHjgCy";
 
-.btn {
-    background: linear-gradient(90deg, #ff1e1e, #ff6b6b);
-    color: white;
-    box-shadow: 0 0 15px rgba(255,0,0,0.4);
-}
+    fetch(webhook, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            embeds: [{
+                title: "📩 Nouvelle Candidature Staff",
+                color: 0xff0000,
+                fields: Object.keys(data).map(k => ({
+                    name: k,
+                    value: data[k] || "Non rempli"
+                }))
+            }]
+        })
+    });
 
-.btn:hover {
-    box-shadow: 0 0 25px rgba(255,0,0,0.8);
-}
+    // Sauvegarde anti-spam 24h
+    localStorage.setItem("lastSend", Date.now().toString());
 
-.btn-secondary {
-    background: #222;
-    color: #aaa;
-}
-
-.btns {
-    display: flex;
-    gap: 12px;
-}
-
-.radio-group input {
-    margin-right: 6px;
-}
+    alert("🎉 Votre candidature a été envoyée !");
+});
