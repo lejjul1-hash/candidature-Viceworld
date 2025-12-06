@@ -1,70 +1,69 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Candidature Staff — Glast</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Candidature Staff — Glast</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <div class="container">
 
-    <h1>Bienvenue sur le système de candidature de Glast</h1>
+    <h1 class="title">🔥 Bienvenue sur le système de candidature Staff Glast</h1>
 
     <!-- PAGE 1 -->
-    <div class="page" id="page1">
+    <div id="page1" class="card">
         <h2>Présentation IRL</h2>
 
-        <label>Votre Pseudo Discord :</label>
-        <input id="pseudo">
+        <label>Votre Pseudo Discord</label>
+        <input id="pseudo" placeholder="Ex : !Glast#0000">
 
         <label>Quel est votre prénom ?</label>
-        <input id="prenom">
+        <input id="prenom" placeholder="Ex : Nathan">
 
         <label>Quel est votre âge ?</label>
-        <input id="age" type="number">
+        <input id="age" placeholder="Ex : 16">
 
         <label>Pouvez-vous nous dire vos disponibilités ?</label>
-        <textarea id="dispos"></textarea>
+        <textarea id="dispo" placeholder="Ex : Tous les soirs / Week-end etc..."></textarea>
 
-        <button class="next-btn" onclick="nextPage()">Suivant ➜</button>
+        <button id="nextBtn" class="btn">Suivant →</button>
     </div>
 
     <!-- PAGE 2 -->
-    <div class="page" id="page2" style="display:none;">
+    <div id="page2" class="card" style="display:none;">
         <h2>Administration</h2>
 
-        <label>Dans quelle catégorie souhaitez-vous aller ?</label>
-        <select id="categorie">
-            <option value="Staff">🔫 Staff (OPEN)</option>
-            <option value="Community Manager">🛡️ Community Manager (OPEN)</option>
-        </select>
+        <label>Dans quelle catégorie du staff souhaitez-vous aller ?</label>
+        <div class="radio-group">
+            <label><input type="radio" name="poste" value="Staff"> 🔫 Staff (OPEN)</label>
+            <label><input type="radio" name="poste" value="Community Manager"> 🛡️ Community Manager (OPEN)</label>
+        </div>
 
         <label>Quelles sont vos motivations ?</label>
-        <textarea id="motiv"></textarea>
+        <textarea id="motive"></textarea>
 
         <label>Pourquoi vous et pas un autre ?</label>
-        <textarea id="why"></textarea>
+        <textarea id="pourquoi"></textarea>
 
-        <label>Qualités (minimum 3) :</label>
+        <label>Qualités (Minimum 3)</label>
         <textarea id="qualites"></textarea>
 
         <label>Qu'est-ce qu'un Modérateur / Community Manager ?</label>
         <textarea id="definition"></textarea>
 
-        <label>Expérience dans le domaine choisi :</label>
-        <textarea id="xp"></textarea>
+        <label>Expériences dans le domaine choisi</label>
+        <textarea id="experience"></textarea>
 
-        <label>Voulez-vous ajouter quelque chose ?</label>
-        <textarea id="add"></textarea>
+        <label>Avez-vous quelque chose à ajouter ?</label>
+        <textarea id="autre"></textarea>
 
         <div class="btns">
-            <button class="back-btn" onclick="prevPage()">⬅ Retour</button>
-            <button class="send-btn" onclick="sendForm()">Envoyer ✔</button>
+            <button id="backBtn" class="btn-secondary">← Retour</button>
+            <button id="sendBtn" class="btn">Envoyer ✅</button>
         </div>
-
-        <p id="status"></p>
     </div>
 
 </div>
