@@ -120,8 +120,23 @@ header {
     text-shadow: 0 0 10px red;
 }
 
-/* ⚠️ Bouton admin supprimé ici */
-/* (ancienne classe .admin-btn-top supprimée) */
+/* 🔥 BOUTON ADMIN EN HAUT */
+.admin-btn-top {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    background: #1c1e23;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: #ff4040;
+    font-weight: 800;
+    border: 1px solid rgba(255,255,255,0.1);
+    cursor: pointer;
+}
+
+.admin-btn-top:hover {
+    background: #2b2e33;
+}
 
 /* PANEL ADMIN */
 #adminPanel {
@@ -130,25 +145,25 @@ header {
 }
 
 .admin-entry {
-    background:#0e0e10;
-    padding:12px;
-    margin-bottom:12px;
-    border-radius:10px;
-    border:1px solid rgba(255,255,255,0.05);
+    background: #0e0e10;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .admin-btn {
-    width:100%;
-    padding:12px;
-    background:#ff1e1e;
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    font-weight:700;
-    box-shadow:0 0 12px rgba(255,0,0,0.4);
+    width: 100%;
+    padding: 12px;
+    background: #ff1e1e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    box-shadow: 0 0 12px rgba(255,0,0,0.4);
 }
 
 .admin-btn:hover {
-    box-shadow:0 0 22px rgba(255,0,0,0.8);
+    box-shadow: 0 0 22px rgba(255,0,0,0.8);
 }
