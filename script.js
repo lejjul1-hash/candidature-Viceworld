@@ -1,4 +1,4 @@
-const WEBHOOK = "https://discord.com/api/webhooks/1452085864187433082/aJtBwrpW1TSJy7b9PHEyOWEOGETMpyXIaDD06x9kuBO-GuIGOVsj2-2xOlvk4J9dRjH4";
+const WEBHOOK = "https://discord.com/api/webhooks/1452297731316912310/hJ8GetRDlkSzFK1g9_1FEAycxy5CJc8CCnWsLUIrRBZVTBn1nuuhLRwhX0rz9oUqXl87";
 const ROLE_ID = "1451995468585242841";
 const ADMIN_CODE = "GTlifetontop1234";
 const WHITELIST_IP = "";
@@ -146,4 +146,5 @@ function clearAll(){
     localStorage.removeItem("candidatures");
     adminPanel.innerHTML = "<p style='color:#ff4444;font-weight:700'>Toutes les candidatures ont été supprimées.</p>";
 }
+
 
