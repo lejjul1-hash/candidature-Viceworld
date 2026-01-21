@@ -88,7 +88,7 @@ async function sendForm() {
                     value:data.extra || "Aucune"
                 }
             ],
-            footer: { text: "💼 Système de candidature - Glast" },
+            footer: { text: "💼 Système de candidature - NewVibe" },
             timestamp: new Date()
         }]
     };
@@ -146,6 +146,7 @@ function clearAll(){
     localStorage.removeItem("candidatures");
     adminPanel.innerHTML = "<p style='color:#ff4444;font-weight:700'>Toutes les candidatures ont été supprimées.</p>";
 }
+
 
 
 
