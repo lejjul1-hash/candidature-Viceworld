@@ -21,40 +21,56 @@
   <h1 class="title">Bienvenue sur le système de candidature de <span>NovaWorld</span></h1>
 
   <!-- PAGE 1 -->
-  <div id="step1" class="card step">
-    <h2>Présentation IRL</h2>
+<div id="step1" class="card step">
+  <h2>Présentation IRL</h2>
 
-    <div class="inputs">
-      <label>Présentation IRL</label>
-      <textarea id="irl"></textarea>
+  <div class="inputs">
+    <label>Présentation IRL</label>
+    <textarea id="irl" placeholder="Présente-toi brièvement IRL"></textarea>
 
-      <label>Pseudo Discord</label>
-      <input id="discord">
+    <label>Prénom</label>
+    <input id="prenom" type="text" placeholder="Ex : Lucas">
 
-      <label>Prénom</label>
-      <input id="prenom">
+    <label>Âge</label>
+    <input id="age" type="number" placeholder="Ex : 18">
 
-      <label>Âge</label>
-      <input id="age" type="number">
+    <label>Pseudo Discord</label>
+    <input id="discord" type="text" placeholder="Ex : Sacha#0001">
 
-      <label>Disponibilités</label>
-      <textarea id="dispos"></textarea>
-    </div>
+    <label>ID Discord</label>
+    <input id="discordId" type="text" placeholder="Ex : 283910293810293">
 
-    <button class="btn-next" onclick="nextStep()">Suivant ➜</button>
+    <label>Disponibilités</label>
+    <textarea id="dispos" placeholder="Ex : Semaine 18h-23h / WE libre"></textarea>
   </div>
 
-  <!-- PAGE 2 -->
-  <div id="step2" class="card step" style="display:none;">
-    <h2>Administration</h2>
+  <button class="btn-next" onclick="nextStep()">Suivant ➜</button>
+</div>
 
-    <div class="inputs">
 
-      <label>Catégorie</label>
-      <select id="categorie">
-        <option value="Staff">🔫・Staff</option>
-        <option value="Community Manager">🛡️・Community Manager</option>
-      </select>
+<!-- PAGE 2 -->
+<div id="step2" class="card step" style="display:none;">
+  <h2>Administration</h2>
+
+  <div class="inputs">
+
+    <label>Poste souhaité</label>
+    <select id="poste" onchange="toggleAutrePoste()">
+      <option value="">— Sélectionnez un poste —</option>
+      <option value="Helpeur">Helpeur</option>
+      <option value="Modérateur">Modérateur</option>
+      <option value="Gérant Staff">Gérant Staff</option>
+      <option value="Gérant Légal">Gérant Légal</option>
+      <option value="Gérant Illégal">Gérant Illégal</option>
+      <option value="Gérant Global">Gérant Global</option>
+      <option value="Autre">Autre</option>
+    </select>
+        
+    <!-- Champ affiché seulement si "Autre" -->
+    <div id="autrePosteBox" style="display:none;">
+      <label>Précisez le poste</label>
+      <input id="autrePoste" type="text" placeholder="Ex : Développeur, Graphiste...">
+    </div>
 
       <label>Motivations</label>
       <textarea id="motivations"></textarea>
@@ -91,6 +107,7 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
