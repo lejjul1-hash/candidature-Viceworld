@@ -1,6 +1,6 @@
-const WEBHOOK = "https://discord.com/api/webhooks/1470730152232222872/EO7Zd7KC1-U56ZhKoCkzpUv6-t6jEWJ0k_FOWubqBkTP0r4EGaubYKzjABCcs6PyM7tq";
-const ROLE_ID = "1470440743326712003";
-const ADMIN_CODE = "GTlifetontop1234";
+const WEBHOOK = "https://discord.com/api/webhooks/1474147659697623140/_fNXbk5PdecyzLyiuTUO5Bz1MnX3TPdh70t991XB6NR3G83wAsk0-pTwzYVE2ul_xiqm";
+const ROLE_ID = "1474088164154151065";
+const ADMIN_CODE = "";
 const WHITELIST_IP = "";
 
 // PAGE SYSTEM
@@ -171,6 +171,7 @@ function toggleAutrePoste() {
 
     box.style.display = select.value === "Autre" ? "block" : "none";
 }
+
 
 
 
